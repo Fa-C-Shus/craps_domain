@@ -12,3 +12,10 @@
 
 
 very_good create dart_package craps_domain --description "Core Craps Logic" --publishable
+
+cd craps_domain
+git init
+git add . && git commit -m "Empty starter project"
+
+git remote add origin git@github.com:Fa-C-Shus/craps_domain
+git push -u origin main

@@ -5,3 +5,9 @@
 .packages
 build/
 pubspec.lock
+
+# Coverage
+coverage/
+coverage_badge.svg
+.test_coverage.dart
+*.lcov
