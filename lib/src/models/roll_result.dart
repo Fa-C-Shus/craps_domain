@@ -65,6 +65,6 @@ class RollResult {
 
   @override
   String toString() {
-    return '$value - <$firstDie, $secondDie>';
+    return 'Roll: $value - <$firstDie, $secondDie>';
   }
 }

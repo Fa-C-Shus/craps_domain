@@ -42,6 +42,13 @@ class Puck {
     } else if ((POINT_NUMBERS.contains(roll) && !state) ||
         (POINT_NUMBERS_CRAPLESS.contains(roll) && crapless && !state)) {
       pointSet(roll);
+    } else if (!crapless && CRAPS.contains(roll) && !state) {
+      "CRAPS! pay the don't".log();
+      // but mostly who cares
+    } else if ((!crapless && NATURAL_WINNERS.contains(roll) && !state) ||
+        (crapless && 7 == roll && !state)) {
+      'Front line Winner!'.log();
+      // but mostly who cares
     } else {
       // who cares?
       //  Natural Winner or Loser
@@ -84,6 +91,8 @@ class Puck {
         '$point is not valid; point must be in $POINT_NUMBERS',
       );
     }
+    '($point); Mark the point'.log();
+
     state = true;
     _point = point;
   }
@@ -91,6 +100,7 @@ class Puck {
   /// Seven out turn the puck off
   void sevenOut() {
     assert(state, "The puck is off; we can't seven out");
+    'Seven out; take the line; pay behind'.log();
     state = false;
     _point = null;
   }
@@ -98,6 +108,7 @@ class Puck {
   /// Point made turn the puck off
   void pointMade() {
     assert(state, 'There is no point');
+    'Point Made ($_point); pay the line'.log();
     state = false;
     _point = null;
   }

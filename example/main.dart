@@ -6,7 +6,7 @@ void main() {
 
   for (var i = 1; i < 11; i++) {
     final roll = dice.roll();
-    puck.evalRoll(roll.value);
     roll.log();
+    puck.evalRoll(roll.value);
   }
 }

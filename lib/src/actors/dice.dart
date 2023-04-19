@@ -74,7 +74,7 @@ class Dice {
     );
     _history.add(retVal);
 
-    'Roll: ${retVal.value} <${retVal.firstDie},${retVal.secondDie}>'.log();
+    // 'Roll: ${retVal.value} <${retVal.firstDie},${retVal.secondDie}>'.log();
     return retVal;
   }
 }

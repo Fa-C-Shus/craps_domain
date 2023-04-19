@@ -101,7 +101,7 @@ void main() {
       () async {
         // arrange
         final result = RollResult(firstDie: 3, secondDie: 3);
-        const expected = '6 - <3, 3>';
+        const expected = 'Roll: 6 - <3, 3>';
 
         // act
         final actual = result.toString();
