@@ -48,6 +48,8 @@ genhtml -o ./coverage/report ./coverage/lcov.info
 open ./coverage/report/index.html
 ```
 
+## Simulate 10 rolls 🎲 🎲
+
 ```dart
 import 'package:craps_domain/craps_domain.dart';
 
@@ -66,21 +68,27 @@ void main() {
 ...should return ...
 
 ```sh
-Connecting to VM Service at http://127.0.0.1:63181/v3XJmdr2A2M=/
-[log] Roll: 5 - <1, 4>
-[log] (5); Mark the point
-[log] Roll: 6 - <2, 4>
+Connecting to VM Service at http://127.0.0.1:64072/P2Op5b6-B1s=/
 [log] Roll: 7 - <5, 2>
-[log] Seven out; take the line; pay behind
-[log] Roll: 11 - <5, 6>
 [log] Front line Winner!
-[log] Roll: 6 - <1, 5>
+[log] Roll: 4 - <3, 1>
+[log] (4); Mark the point
+[log] Roll: 7 - <4, 3>
+[log] Seven out; take the line; pay behind
+[log] Roll: 6 - <2, 4>
 [log] (6); Mark the point
-[log] Roll: 4 - <1, 3>
-[log] Roll: 8 - <2, 6>
-[log] Roll: 11 - <5, 6>
-[log] Roll: 5 - <4, 1>
-[log] Roll: 8 - <3, 5>
+[log] Roll: 6 - <3, 3>
+[log] Point Made (6); pay the line
+[log] Roll: 11 - <6, 5>
+[log] Front line Winner!
+[log] Roll: 6 - <5, 1>
+[log] (6); Mark the point
+[log] Roll: 7 - <4, 3>
+[log] Seven out; take the line; pay behind
+[log] Roll: 11 - <6, 5>
+[log] Front line Winner!
+[log] Roll: 5 - <2, 3>
+[log] (5); Mark the point
 Exited
 ```
 
