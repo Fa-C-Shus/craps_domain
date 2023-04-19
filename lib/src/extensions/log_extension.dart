@@ -1,5 +1,3 @@
-// coverage:ignore-file
-
 /*
  * Project: extensions
  * Created Date: Monday April 17th 2023 3:39:05 pm
