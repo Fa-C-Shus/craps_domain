@@ -1,0 +1,10 @@
+name: your_craps_implementation
+description: Crapps implementation based upon Core Craps Logic
+publish_to: none
+
+environment:
+  sdk: ">=2.18.0 <3.0.0"
+
+dependencies:
+  craps_domain:
+    path: ../

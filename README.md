@@ -1,14 +1,17 @@
-# Craps Domain
+# 🎲 🎲 Craps Domain
 
+[![Pub](https://img.shields.io/pub/v/craps_domain.svg)](https://pub.dev/packages/craps_domain)
+[![coverage](https://raw.githubusercontent.com/Fa-C-Shus/craps_domain/main/coverage_badge.svg)](https://github.com/Fa-C-Shus/craps_domain/actions)
+[![License: MIT](https://img.shields.io/badge/license-MIT-purple.svg)](https://opensource.org/licenses/MIT)
 [![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link]
-[![Powered by Mason](https://img.shields.io/endpoint?url=https%3A%2F%2Ftinyurl.com%2Fmason-badge)](https://github.com/felangel/mason)
-[![License: MIT][license_badge]][license_link]
+
+---
 
 Core Craps Logic
 
-## Installation 💻
+Craps library that provides the components and game play for craps, the casino game. This is intended to be the core elements that allows creators to make the craps UI without having to build out the components
 
-**❗ In order to start using Craps Domain you must have the [Dart SDK][dart_install_link] installed on your machine.**
+## Installation 💻
 
 Add `craps_domain` to your `pubspec.yaml`:
 
@@ -25,14 +28,6 @@ dart pub get
 
 ---
 
-## Continuous Integration 🤖
-
-Craps Domain comes with a built-in [GitHub Actions workflow][github_actions_link] powered by [Very Good Workflows][very_good_workflows_link] but you can also add your preferred CI/CD solution.
-
-Out of the box, on each pull request and push, the CI `formats`, `lints`, and `tests` the code. This ensures the code remains consistent and behaves correctly as you add functionality or make changes. The project uses [Very Good Analysis][very_good_analysis_link] for a strict set of analysis options used by our team. Code coverage is enforced using the [Very Good Workflows][very_good_coverage_link].
-
----
-
 ## Running Tests 🧪
 
 To run all unit tests:
@@ -40,17 +35,61 @@ To run all unit tests:
 ```sh
 dart pub global activate coverage 1.2.0
 dart test --coverage=coverage
-dart pub global run coverage:format_coverage --lcov --in=coverage --out=coverage/lcov.info
+dart pub global run coverage:format_coverage --packages=.dart_tool/package_config.json --check-ignore --report-on=lib --lcov -o ./coverage/lcov.info -i ./coverage
 ```
 
 To view the generated coverage report you can use [lcov](https://github.com/linux-test-project/lcov).
 
 ```sh
 # Generate Coverage Report
-genhtml coverage/lcov.info -o coverage/
+genhtml -o ./coverage/report ./coverage/lcov.info
 
 # Open Coverage Report
-open coverage/index.html
+open ./coverage/report/index.html
+```
+
+## Simulate 10 rolls 🎲 🎲
+
+```dart
+import 'package:craps_domain/craps_domain.dart';
+
+void main() {
+  final dice = Dice.generic();
+  final puck = Puck();
+
+  for (var i = 1; i < 11; i++) {
+    final roll = dice.roll();
+    roll.log();
+    puck.evalRoll(roll.value);
+  }
+}
+```
+
+...should return ...
+
+```sh
+Connecting to VM Service at http://127.0.0.1:64072/P2Op5b6-B1s=/
+[log] Roll: 7 - <5, 2>
+[log] Front line Winner!
+[log] Roll: 4 - <3, 1>
+[log] (4); Mark the point
+[log] Roll: 7 - <4, 3>
+[log] Seven out; take the line; pay behind
+[log] Roll: 6 - <2, 4>
+[log] (6); Mark the point
+[log] Roll: 6 - <3, 3>
+[log] Point Made (6); pay the line
+[log] Roll: 11 - <6, 5>
+[log] Front line Winner!
+[log] Roll: 6 - <5, 1>
+[log] (6); Mark the point
+[log] Roll: 7 - <4, 3>
+[log] Seven out; take the line; pay behind
+[log] Roll: 11 - <6, 5>
+[log] Front line Winner!
+[log] Roll: 5 - <2, 3>
+[log] (5); Mark the point
+Exited
 ```
 
 [dart_install_link]: https://dart.dev/get-dart

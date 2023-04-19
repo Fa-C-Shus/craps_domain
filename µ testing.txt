@@ -1,0 +1,20 @@
+/*
+ * Project: craps_domain
+ * Created Date: Monday April 17th 2023 1:00:43 pm
+ * Author: Fa C Shus (paul@facshus.com)
+ * -----
+ * Last Modified: Monday, 17th April 2023 1:00:43 pm
+ * Modified By: Fa C Shus (paul@facshus.com)
+ * -----
+ * Copyright (c) 2021 - 2023 FaCShus Systems
+ * License: GNU GPL
+ */
+
+
+## Activate package `coverage` (if needed):
+dart pub global activate coverage 1.2.0
+
+dart test --coverage=coverage
+dart pub global run coverage:format_coverage --packages=.dart_tool/package_config.json --check-ignore --report-on=lib --lcov -o ./coverage/lcov.info -i ./coverage
+genhtml -o ./coverage/report ./coverage/lcov.info
+open ./coverage/report/index.html
