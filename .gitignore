@@ -8,6 +8,6 @@ pubspec.lock
 
 # Coverage
 coverage/
-coverage_badge.svg
+# coverage_badge.svg
 .test_coverage.dart
 *.lcov

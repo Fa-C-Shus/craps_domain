@@ -25,3 +25,5 @@ dart pub global activate pana
 dart pub global run pana
 
 dart format .
+
+dart pub publish --dry-run
