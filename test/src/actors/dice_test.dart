@@ -105,7 +105,7 @@ void main() {
       expect(dice.currentRoll, expected);
       expect(dice.currentRoll.hashCode, expected.hashCode);
       expect(dice.currentRoll, roll);
-   });
+    });
   });
   group('Dice roll exceptions', () {
     test('Should throw error if face is not in 1-6', () {
@@ -118,11 +118,12 @@ void main() {
 
       // Assert
       expect(
-          () => dice.roll(
-                manual1: firstDie,
-                manual2: secondDie,
-              ),
-          throwsA(const TypeMatcher<AssertionError>()),);
+        () => dice.roll(
+          manual1: firstDie,
+          manual2: secondDie,
+        ),
+        throwsA(const TypeMatcher<AssertionError>()),
+      );
     });
   });
 }
