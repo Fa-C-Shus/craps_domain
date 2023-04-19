@@ -1,7 +1,9 @@
 name: craps_domain
-description: Core Craps Logic
+description: Core Craps Logic - This package contains all of the components of a craps game. It is intended to make generating a craps game easier.
 version: 0.1.0+1
 
+homepage: https://www.facshus.com/
+repository: https://github.com/Fa-C-Shus/craps_domain
 
 environment:
   sdk: ">=2.18.0 <3.0.0"

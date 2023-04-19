@@ -97,6 +97,20 @@ void main() {
     );
 
     test(
+      'should return appropriate string from toString',
+      () async {
+        // arrange
+        final result = RollResult(firstDie: 3, secondDie: 3);
+        const expected = '6 - <3,3>';
+
+        // act
+        final actual = result.toString();
+
+        // assert
+        expect(actual, expected);
+      },
+    );
+    test(
       'should return false when the results are not equal',
       () async {
         // arrange

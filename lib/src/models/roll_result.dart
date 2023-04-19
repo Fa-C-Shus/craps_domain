@@ -62,4 +62,9 @@ class RollResult {
     final hashStr = lst.join('-');
     return hashStr.hashCode;
   }
+
+  @override
+  String toString() {
+    return '$value - <$firstDie, $secondDie>';
+  }
 }
